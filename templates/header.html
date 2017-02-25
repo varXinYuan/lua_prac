@@ -1,0 +1,51 @@
+<nav id="common-header" class="common-header">
+  <div class="container">
+    <a class="logo" href="{{ config.APP_URL }}" target="_self"></a>
+    <ul class="menu-list">
+      <li class="menu-item">
+        <a href="{{ config.APP_URL }}/course?skill_id=0&category_id=1"
+        target="_self" class="left item {% if requestdata.skill == '0' and requestdata.category == '1' then %}red{% end %}">直播课
+        </a>
+      </li>
+      <li class="menu-item">
+        <a href="{{ config.APP_URL }}/course?skill_id=0&category_id=5"
+        target="_self"
+        class="left item {% if requestdata.skill == '0' and requestdata.category == '5' then %}red{% end %} ">企业培训
+        </a>
+      </li>
+      <li class="menu-item">
+        <a href="{{ config.APP_URL }}/teacher"
+        target="_self"
+        class="left item {% if requestdata.teacher ~= nil then %}red{% end %}">
+          大咖导师
+        </a>
+      </li>
+      <li class="menu-item">
+        <a href="http://skill-map.stuq.org/"
+        target="_blank"
+        class="right item">技能图谱</a>
+      </li>
+      <li class="menu-item">
+        <a href="{{ config.APP_URL }}/news"
+        target="_self"
+        class="right item {% if requestdata.news ~= nil then %}red{% end %}">新鲜事儿</a>
+      </li>
+      <!-- <li class="menu-item"><a href="#">众筹平台</a></li>
+      <li class="menu-item"><a href="#">新鲜事儿</a></li> -->
+    </ul>
+    <div class="common-bar">
+      <form class="header-search" action="index.html" method="post">
+        <input type="text" name="searchBox" value="" class="form-control" id="search-box" placeholder="请输入关键词">
+        <button type="button" name="button" class="search-button">
+          <span>搜索</span>
+        </button>
+      </form>
+      <div class="notification-info-wrapper" v-if="false">
+        <a href="#" class="notification-info"><img src="http://placehold.it/21x30" alt=""></a>
+      </div>
+      <div class="dropdown-wrapper">
+      </div>
+    </div>
+  </div>
+</nav>
+
